@@ -49,16 +49,25 @@ console.log(totalWood);
          /**----> Problem number-3: Brick Calculator  <---- */
 
 function brickCalculator(floor) {
+    var noOfBrick = 0;
     if (floor <=10 && floor >= 1) {
-        var noOfBrick = floor * (15 * 1000);
+         noOfBrick = floor * (15 * 1000);
         return noOfBrick;
 
-    }else if(floor >= 11 && floor <= 20 ){
-        var noOfBrick = floor * (12 * 1000);
+    }else if(floor <= 20 ){
+
+        first10Floor = 10 * (15 * 1000);
+        remaining = floor - 10;
+        second10Floor = remaining * (12 * 1000);
+        noOfBrick = first10Floor + second10Floor;
         return noOfBrick;
 
     }else if(floor >= 21){
-        var noOfBrick = floor * (10 * 1000);
+        first10Floor = 10 * (15 * 1000);
+        second10Floor = 10 * (12 * 1000);
+        remaining = floor - 20;
+        thirdRestFloor = remaining * (10 * 1000);
+        noOfBrick = first10Floor + second10Floor + thirdRestFloor;
         return noOfBrick;
     }
 }
